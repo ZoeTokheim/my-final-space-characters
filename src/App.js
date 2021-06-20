@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>MCC Rankings!</h1>
+        <h1 className="header-title">MINECRAFT CHAMPIONSHIP RANKINGS</h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="characters">
             {(provided) => (
@@ -73,8 +73,9 @@ function App() {
           </Droppable>
         </DragDropContext>
       </header>
-      <p>
-        Images from <a href="https://mcchampionship.fandom.com/wiki/MCChampionship_Wiki">MCC Championship Wiki</a>
+      <p className="image-credit">
+        Images from <a href="https://mcchampionship.fandom.com/wiki/MCChampionship_Wiki" 
+          target="_blank"  rel="noopener noreferrer">MCC Championship Wiki</a>
       </p>
     </div>
   );

@@ -1,5 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500&family=Teko:wght@600&display=swap');
+
 .App {
   text-align: center;
+  background-color: #454F52;
+  border: 1px solid transparent;
 }
 
 .App-header {
@@ -26,6 +32,7 @@
 .characters {
   list-style: none;
   padding-left: 0;
+  font-family: "Courier New";
 }
 
 .characters li {
@@ -35,12 +42,14 @@
   border-radius: .2em;
   padding: .5em .8em .5em .5em;
   margin-bottom: 1em;
+  background-color: white;
 }
 
 .characters p {
   max-width: none;
   font-weight: bold;
   margin: 0;
+  font-family: 'Raleway', sans-serif;
 }
 
 .characters-thumb {
@@ -57,4 +66,17 @@
   display: block;
   width: 100%;
   height: auto;
+}
+
+h1 {
+  font-size: 75px;
+}
+
+.header-title {
+  font-family: 'Teko', sans-serif;
+  color: white;
+}
+
+.image-credit {
+  color: white;
 }
