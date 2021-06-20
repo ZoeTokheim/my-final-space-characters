@@ -2,36 +2,36 @@ import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import './App.css';
 
-const finalSpaceCharacters = [
-  {
-    id: 'gary',
-    name: 'Gary Goodspeed',
-    thumb: '/images/gary.png'
-  },
-  {
-    id: 'cato',
-    name: 'Little Cato',
-    thumb: '/images/cato.png'
-  },
-  {
-    id: 'kvn',
-    name: 'KVN',
-    thumb: '/images/kvn.png'
-  },
-  {
-    id: 'mooncake',
-    name: 'Mooncake',
-    thumb: '/images/mooncake.png'
-  },
-  {
-    id: 'quinn',
-    name: 'Quinn Ergon',
-    thumb: '/images/quinn.png'
-  }
+const teams = [
+  'Red Rabbits',
+  'Orange Ocelots',
+  'Yellow Yaks', 
+  'Lime Llamas',
+  'Green Guardians',
+  'Cyan Creepers',
+  'Blue Bats',
+  'Purple Pandas',
+  'Pink Parrots',
+  'Aqua Axolotls'
 ]
 
+var genTeams = [];
+
+for (let i=0; i < teams.length; i++) {
+  let team = {
+    id: teams[i].split(' ')[0].toLowerCase(),
+    name: teams[i],
+    thumb: '/images/' + teams[i].split(' ')[0].toLowerCase() + '_' + 
+      teams[i].split(' ')[1].toLowerCase() + '_logo.png',
+  }
+  genTeams.push(team);
+}
+
+const mccTeams = genTeams
+
+
 function App() {
-  const [characters, updateCharacters] = useState(finalSpaceCharacters);
+  const [characters, updateCharacters] = useState(mccTeams);
 
   function handleOnDragEnd(result) {
     if (!result.destination) return;
@@ -46,7 +46,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Final Space Characters</h1>
+        <h1>MCC Rankings!</h1>
         <DragDropContext onDragEnd={handleOnDragEnd}>
           <Droppable droppableId="characters">
             {(provided) => (
@@ -74,7 +74,7 @@ function App() {
         </DragDropContext>
       </header>
       <p>
-        Images from <a href="https://final-space.fandom.com/wiki/Final_Space_Wiki">Final Space Wiki</a>
+        Images from <a href="https://mcchampionship.fandom.com/wiki/MCChampionship_Wiki">MCC Championship Wiki</a>
       </p>
     </div>
   );
